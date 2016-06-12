@@ -1,0 +1,27 @@
+{
+  "name": "performance",
+  "version": "1.0.0",
+  "description": "performance_optimization",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-ngrok": "^0.2.2",
+    "load-grunt-tasks": "^3.5.0",
+    "ngrok": "^2.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuperDoug92/frontend-nanodegree-mobile-portfolio.git"
+  },
+  "author": "Douglas Clarke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperDoug92/frontend-nanodegree-mobile-portfolio/issues"
+  },
+  "homepage": "https://github.com/SuperDoug92/frontend-nanodegree-mobile-portfolio#readme"
+}
