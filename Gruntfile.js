@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-  grunt.loadNpmTasks('grunt-ngrok');
+require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
     ngrok: {
@@ -12,6 +12,27 @@ module.exports = function(grunt) {
         }
       },
     },
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'css',
+          src: ['*.css', '!*.min.css'],
+          dest: 'css',
+          ext: '.min.css'
+        }]
+      }
+    },
+    imagemin: {                          // Task
+      dynamic: {                         // Another target
+        files: [{
+          expand: true,                  // Enable dynamic expansion
+          cwd: 'img',                   // Src matches are relative to this path
+          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+          dest: 'imgmin'                  // Destination path prefix 
+        }]
+      }
+    }
   });
 
   grunt.registerTask('default','ngrok');
