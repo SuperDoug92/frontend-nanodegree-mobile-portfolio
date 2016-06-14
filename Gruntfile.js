@@ -1,17 +1,7 @@
 module.exports = function(grunt) {
-
-require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
-    ngrok: {
-      server: {
-        proto: 'tcp',
-        port: 8080,
-        onConnected: function(url) {
-          grunt.log.writeln('Local server exposed to %s!', url);
-        }
-      },
-    },
     cssmin: {
       target: {
         files: [{
@@ -27,13 +17,20 @@ require('load-grunt-tasks')(grunt);
       dynamic: {                         // Another target
         files: [{
           expand: true,                  // Enable dynamic expansion
-          cwd: 'img',                   // Src matches are relative to this path
+          cwd: 'views/images',                   // Src matches are relative to this path
           src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-          dest: 'imgmin'                  // Destination path prefix 
+          dest: 'views/imagesmin',                // Destination path prefix
         }]
+      }
+    },
+    bytesize: {
+      all: {
+        src: [
+          '*'
+        ]
       }
     }
   });
 
-  grunt.registerTask('default','ngrok');
-}
+  grunt.registerTask('default',['cssmin','imagemin']);
+};
