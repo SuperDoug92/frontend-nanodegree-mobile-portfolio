@@ -103,6 +103,8 @@ class SimpleHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         compressed_content_length = len(content)
         f.close()
         self.send_header("Content-Length", max(raw_content_length, compressed_content_length))
+        self.send_header("Cache-Control", "public")
+        self.send_header("Expires", "30000")
         self.send_header("Last-Modified", self.date_time_string(fs.st_mtime))
         self.end_headers()
         return content
