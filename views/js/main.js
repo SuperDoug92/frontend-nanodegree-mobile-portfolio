@@ -497,7 +497,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  numPizzas = window.innerHeight/s*cols
+  numPizzas = (Math.floor(window.innerHeight/s))*cols
   for (var i = 0; i < numPizzas; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
