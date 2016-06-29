@@ -11,11 +11,11 @@ Related course: [Critical Rendering Path course](https://www.udacity.com/course/
 Some useful tips to help you get started:
 
 1. Check out the repository
-2. To inspect the site on your phone, you can run a local server
+2. Run on a local server:
 
   ```bash
   $> cd /path/to/your-project-folder
-  $> python GzupSimpleHttpServer.py
+  $> python GzipSimpleHttpServer.py
   ```
 
 3. Open a browser and visit localhost:8000
